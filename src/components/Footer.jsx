@@ -10,7 +10,7 @@ const Footer = () => {
                 {/* Get in Touch Section */}
                 <div className="mb-8 md:mb-0 md:w-1/3">
                     <h3 className="text-lg font-semibold mb-4 whitespace-nowrap">GET IN TOUCH</h3>
-                    <button className="text-white px-4 py-2 rounded-full font-medium border border-white">
+                    <button className="text-white px-4 py-2 rounded-full font-medium border hover:bg-white hover:text-black border-white cursor-pointer">
                         @auréa_id
                     </button>
                 </div>

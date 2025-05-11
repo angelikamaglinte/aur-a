@@ -12,12 +12,12 @@ const Hero = () => {
                 <div className="relative z-10 px-6 md:px-16 lg:px-24 max-w-5xl text-white pt-20 md:pt-32 lg:pt-40">
                     {/* heading */}
                     <h1
-                        className="text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight "
+                        className="text-4xl md:text-6xl lg:text-7xl font-semibold leading-tight "
                         style={{ fontFamily: 'Canela Text, serif' }}
                     >
                         <div>THE</div>
                         <div>ESSENCE OF</div>
-                        <div className="font-bold whitespace-nowrap">TIMELESS ELEGANCE</div>
+                        <div className="font-bold">TIMELESS ELEGANCE</div>
                     </h1>
 
                     {/* subheading */}

@@ -20,11 +20,11 @@ const AboutUs = () => {
             </p>
 
             {/* scrolling images */}
-            <div className="flex justify-center items-center space-x-6 px-4">
+            {/* <div className="flex justify-center items-center space-x-6 px-4">
                 <img src={assets.about_aurea_item_1} alt="Jewelry 1" className="w-150 h-100 object-contain rounded-lg" />
                 <img src={assets.about_aurea_item_2} alt="Jewelry 2" className="w-150 h-100 object-contain rounded-lg" />
                 <img src={assets.about_aurea_item_3} alt="Jewelry 3" className="w-150 h-100 object-contain rounded-lg" />
-            </div>
+            </div> */}
 
             {/* guarantee */}
             <p className="text-center text-sm md:text-base font-light tracking-wide mt-12 font-inter">
