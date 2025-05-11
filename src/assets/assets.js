@@ -23,6 +23,13 @@ import footer_item_1 from './footer/footer-item-1.png'
 import footer_item_2 from './footer/footer-item-2.png'
 import footer_item_3 from './footer/footer-item-3.png'
 
+// product images
+import bracelet1 from './products/bracelet1.jpg'
+import earrings1 from './products/earrings1.jpg'
+import necklace1 from './products/necklace1.jpg'
+import ring1 from './products/ring1.jpg'
+
+
 export const assets = {
     // navbar assets
     logo,
@@ -50,5 +57,10 @@ export const assets = {
     // footer assets
     footer_item_1,
     footer_item_2,
-    footer_item_3
+    footer_item_3,
+    // product images
+    bracelet1,
+    earrings1,
+    necklace1,
+    ring1
 }

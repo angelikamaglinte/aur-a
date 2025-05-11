@@ -65,46 +65,22 @@ const OurCollection = () => {
                     )}
                 </div>
 
-                {/* Earrings */}
-                <div>
-                    <div
-                        className="flex justify-between items-center border-b pb-2 cursor-pointer"
-                        onClick={() => toggleSection('earrings')}
-                    >
-                        <h3 className="text-3xl md:text-5xl lg:text-6xl font-semibold" style={{ fontFamily: 'Canela Text, serif' }}>
-                            EARRINGS
-                        </h3>
-                        <img
-                            src={openSection === 'earrings' ? assets.dropdown_menu_up : assets.dropdown_menu_down}
-                            alt="Dropdown Icon"
-                            className="w-6 h-3 md:w-8 md:h-4 lg:w-10 lg:h-5"
-                        />
-                    </div>
-                    {openSection === 'earrings' && (
-                        <div className="pl-4 mt-2 space-y-1 text-sm md:text-base">
-                            <p>Drop</p>
-                            <p>Hoop</p>
-                            <p>Stud</p>
-                        </div>
-                    )}
-                </div>
-
                 {/* Necklaces */}
                 <div>
                     <div
                         className="flex justify-between items-center border-b pb-2 cursor-pointer"
-                        onClick={() => toggleSection('earrings')}
+                        onClick={() => toggleSection('necklaces')}
                     >
                         <h3 className="text-3xl md:text-5xl lg:text-6xl font-semibold" style={{ fontFamily: 'Canela Text, serif' }}>
                             NECKLACES
                         </h3>
                         <img
-                            src={openSection === 'earrings' ? assets.dropdown_menu_up : assets.dropdown_menu_down}
+                            src={openSection === 'necklaces' ? assets.dropdown_menu_up : assets.dropdown_menu_down}
                             alt="Dropdown Icon"
                             className="w-6 h-3 md:w-8 md:h-4 lg:w-10 lg:h-5"
                         />
                     </div>
-                    {openSection === 'earrings' && (
+                    {openSection === 'necklaces' && (
                         <div className="pl-4 mt-2 space-y-1 text-sm md:text-base">
                             <p>Layered</p>
                             <p>Charm</p>
@@ -117,18 +93,18 @@ const OurCollection = () => {
                 <div>
                     <div
                         className="flex justify-between items-center border-b pb-2 cursor-pointer"
-                        onClick={() => toggleSection('earrings')}
+                        onClick={() => toggleSection('bracelets')}
                     >
                         <h3 className="text-3xl md:text-5xl lg:text-6xl font-semibold" style={{ fontFamily: 'Canela Text, serif' }}>
                             BRACELETS
                         </h3>
                         <img
-                            src={openSection === 'earrings' ? assets.dropdown_menu_up : assets.dropdown_menu_down}
+                            src={openSection === 'bracelets' ? assets.dropdown_menu_up : assets.dropdown_menu_down}
                             alt="Dropdown Icon"
                             className="w-6 h-3 md:w-8 md:h-4 lg:w-10 lg:h-5"
                         />
                     </div>
-                    {openSection === 'earrings' && (
+                    {openSection === 'bracelets' && (
                         <div className="pl-4 mt-2 space-y-1 text-sm md:text-base">
                             <p>Cuffs</p>
                             <p>Chains</p>
@@ -141,18 +117,18 @@ const OurCollection = () => {
                 <div>
                     <div
                         className="flex justify-between items-center border-b pb-2 cursor-pointer"
-                        onClick={() => toggleSection('earrings')}
+                        onClick={() => toggleSection('watches')}
                     >
                         <h3 className="text-3xl md:text-5xl lg:text-6xl font-semibold" style={{ fontFamily: 'Canela Text, serif' }}>
                             WATCHES
                         </h3>
                         <img
-                            src={openSection === 'earrings' ? assets.dropdown_menu_up : assets.dropdown_menu_down}
+                            src={openSection === 'watches' ? assets.dropdown_menu_up : assets.dropdown_menu_down}
                             alt="Dropdown Icon"
                             className="w-6 h-3 md:w-8 md:h-4 lg:w-10 lg:h-5"
                         />
                     </div>
-                    {openSection === 'earrings' && (
+                    {openSection === 'watches' && (
                         <div className="pl-4 mt-2 space-y-1 text-sm md:text-base">
                             <p>Elegant</p>
                             <p>Minimalist</p>
