@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-inter: 'Inter', 'sans-serif';
+    --font-canela: 'Canela Text', 'serif';
+}
+
+@font-face {
+    font-family: 'Canela Text';
+    src: url('/assets/fonts/CanelaText-Regular.woff2') format('woff2'),
+         url('/assets/fonts/CanelaText-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canela Text';
+    src: url('/assets/fonts/CanelaText-Bold.woff2') format('woff2'),
+         url('/assets/fonts/CanelaText-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Canela Text';
+    src: url('/assets/fonts/CanelaText-Italic.woff2') format('woff2'),
+         url('/assets/fonts/CanelaText-Italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
