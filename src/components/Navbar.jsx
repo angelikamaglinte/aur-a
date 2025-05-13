@@ -1,11 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { assets } from '../assets/assets';
 import { Link, useLocation } from 'react-router-dom';
+import LoginModal from './Login/LoginModal';
+import SignupModal from './Signup/SignupModal';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
-    const location = useLocation(); // Get the current route
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+    const [isSignupOpen, setIsSignupOpen] = useState(false);
+    const location = useLocation();
+
+    // Function to open LoginModal
+    const openLogin = () => {
+        setIsSignupOpen(false); // Close SignupModal
+        setIsLoginOpen(true);  // Open LoginModal
+    };
+
+    // Function to open SignupModal
+    const openSignup = () => {
+        setIsLoginOpen(false); // Close LoginModal
+        setIsSignupOpen(true); // Open SignupModal
+    };
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -78,8 +94,27 @@ const Navbar = () => {
                 <img src={assets.search_icon} alt="Search" className="h-4 w-4 cursor-pointer" />
                 <img src={assets.favorites_icon} alt="Wishlist" className="h-4 w-4 cursor-pointer" />
                 <img src={assets.shopping_cart_icon} alt="Cart" className="h-4 w-4 cursor-pointer" />
-                <img src={assets.profile_icon} alt="Account" className="h-4 w-4 cursor-pointer" />
+                <img
+                    src={assets.profile_icon}
+                    alt="Account"
+                    className="h-4 w-4 cursor-pointer"
+                    onClick={() => setIsLoginOpen(true)} // Open LoginModal
+                />
             </div>
+
+            {/* login modal */}
+            <LoginModal
+                isOpen={isLoginOpen}
+                onClose={() => setIsLoginOpen(false)}
+                onSignupClick={openSignup} // Pass function to switch to SignupModal
+            />
+
+            {/* signup modal */}
+            <SignupModal
+                isOpen={isSignupOpen}
+                onClose={() => setIsSignupOpen(false)}
+                onLoginClick={openLogin} // Pass function to switch to LoginModal
+            />
         </nav>
     );
 };
