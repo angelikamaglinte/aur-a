@@ -9,7 +9,25 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isLoginOpen, setIsLoginOpen] = useState(false);
     const [isSignupOpen, setIsSignupOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const [searchValue, setSearchValue] = useState("");
     const location = useLocation();
+
+    // close search dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                !event.target.closest(".search-dropdown") &&
+                !event.target.closest(".search-icon")
+            ) {
+                setIsSearchOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
 
     // Function to open LoginModal
     const openLogin = () => {
@@ -91,7 +109,12 @@ const Navbar = () => {
 
             {/* icons */}
             <div className="hidden md:flex space-x-4 items-center">
-                <img src={assets.search_icon} alt="Search" className="h-4 w-4 cursor-pointer" />
+                <img
+                    src={assets.search_icon}
+                    alt="Search"
+                    className="h-4 w-4 cursor-pointer"
+                    onClick={() => setIsSearchOpen(!isSearchOpen)}
+                />
                 <img src={assets.favorites_icon} alt="Wishlist" className="h-4 w-4 cursor-pointer" />
                 <img src={assets.shopping_cart_icon} alt="Cart" className="h-4 w-4 cursor-pointer" />
                 <img
@@ -101,6 +124,50 @@ const Navbar = () => {
                     onClick={() => setIsLoginOpen(true)} // Open LoginModal
                 />
             </div>
+
+            {/* Search Dropdown */}
+            {isSearchOpen && (
+                <div className="absolute top-16 right-0 w-full bg-black text-white p-4 pl-40 shadow-lg search-dropdown">
+                    <div className="relative w-100">
+                        {/* Search icon inside input */}
+                        {searchValue === "" && (
+                            <img
+                                src={assets.search_icon}
+                                alt="Search Icon"
+                                className="absolute left-2 top-1/2 transform -translate-y-1/2 h-4 w-4 pointer-events-none opacity-50"
+                            />
+                        )}
+
+                        {/* Input field */}
+                        <input
+                            type="text"
+                            value={searchValue}
+                            onChange={(e) => setSearchValue(e.target.value)}
+                            placeholder="Search"
+                            className="w-full bg-black border-b border-gray-400 outline-none py-1 text-sm placeholder-gray-500 pl-7"
+                        />
+                    </div>
+                    <div className="mt-3 text-sm">
+                        <p className="text-gray-400 mb-1 font-semibold">Popular Searches</p>
+                        <ul className="space-y-1">
+                            {["birthstones", "diamond", "charlotte", "necklace"].map(
+                                (item) => (
+                                    <li
+                                        key={item}
+                                        className="cursor-pointer hover:text-gray-300"
+                                        onClick={() => {
+                                            console.log("Searching:", item);
+                                            setIsSearchOpen(false);
+                                        }}
+                                    >
+                                        {item}
+                                    </li>
+                                )
+                            )}
+                        </ul>
+                    </div>
+                </div>
+            )}
 
             {/* login modal */}
             <LoginModal
@@ -116,6 +183,8 @@ const Navbar = () => {
                 onLoginClick={openLogin} // Pass function to switch to LoginModal
             />
         </nav>
+
+
     );
 };
 
