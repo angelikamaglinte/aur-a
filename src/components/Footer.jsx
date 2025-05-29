@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { assets } from '../assets/assets';
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -28,9 +29,11 @@ const Footer = () => {
                             Each piece is an invitation to slow down, to feel, to remember — and to be remembered.
                         </p>
                         <button className="group text-sm tracking-wide flex items-center gap-2 transition-all duration-300 relative pb-2 border-b-1 border-white font-inter cursor-pointer">
-                            <span className="relative">
-                                Explore More
-                            </span>
+                            <Link to="/collections">
+                                <span className="relative">
+                                    Explore More
+                                </span>
+                            </Link>
                             <ArrowUpRightIcon className="w-5 h-5" />
                         </button>
                     </div>
@@ -46,9 +49,11 @@ const Footer = () => {
                             Each piece is an invitation to slow down, to feel, to remember — and to be remembered.
                         </p>
                         <button className="group text-sm tracking-wide flex items-center gap-2 transition-all duration-300 relative pb-2 border-b-1 border-white font-inter cursor-pointer">
-                            <span className="relative">
-                                Explore More
-                            </span>
+                            <Link to="/collections">
+                                <span className="relative">
+                                    Explore More
+                                </span>
+                            </Link>
                             <ArrowUpRightIcon className="w-5 h-5" />
                         </button>
                     </div>
@@ -64,9 +69,11 @@ const Footer = () => {
                             Each piece is an invitation to slow down, to feel, to remember — and to be remembered.
                         </p>
                         <button className="group text-sm tracking-wide flex items-center gap-2 transition-all duration-300 relative pb-2 border-b-1 border-white font-inter cursor-pointer">
-                            <span className="relative">
-                                Explore More
-                            </span>
+                            <Link to="/collections">
+                                <span className="relative">
+                                    Explore More
+                                </span>
+                            </Link>
                             <ArrowUpRightIcon className="w-5 h-5" />
                         </button>
                     </div>

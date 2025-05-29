@@ -4,14 +4,14 @@ import { assets } from '../../assets/assets';
 const LoginModal = ({ isOpen, onClose, onSignupClick }) => {
     useEffect(() => {
         if (isOpen) {
-            document.body.classList.add('overflow-hidden');
+            document.body.classList.add('scroll-lock');
         } else {
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('scroll-lock');
         }
 
         // Cleanup when the component unmounts
         return () => {
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('scroll-lock');
         };
     }, [isOpen]);
     
@@ -26,7 +26,7 @@ const LoginModal = ({ isOpen, onClose, onSignupClick }) => {
                         <input
                             type="email"
                             id="email"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black bg-none placeholder-black text-black font-inter"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black bg-none placeholder-black text-sm text-black font-inter"
                             placeholder="Email"
                         />
                     </div>
@@ -34,7 +34,7 @@ const LoginModal = ({ isOpen, onClose, onSignupClick }) => {
                         <input
                             type="password"
                             id="password"
-                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black bg-none placeholder-black text-black font-inter"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black bg-none placeholder-black text-sm text-black font-inter"
                             placeholder="Password"
                         />
                     </div>
@@ -69,7 +69,7 @@ const LoginModal = ({ isOpen, onClose, onSignupClick }) => {
                 </p>
                 <button
                     onClick={onClose}
-                    className="absolute top-2 right-5 text-gray-500 hover:text-gray-700 text-2xl"
+                    className="absolute top-2 right-5 text-gray-500 hover:text-gray-700 text-2xl cursor-pointer"
                 >
                     &times;
                 </button>

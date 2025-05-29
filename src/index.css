@@ -30,15 +30,6 @@
     font-style: italic;
 }
 
-.scrollbar-hide {
-    -ms-overflow-style: none; /* Internet Explorer 10+ */
-    scrollbar-width: none; /* Firefox */
-}
-
-.scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Safari and Chrome */
-}
-
 /* Animation for scrolling */
 @keyframes scroll {
     0% {
@@ -53,4 +44,10 @@
     display: inline-flex;
     white-space: nowrap;
     animation: scroll 10s linear infinite; 
+}
+
+.scroll-lock {
+    position: fixed;
+    width: 100%;
+    overflow-y: scroll; /* Keep scrollbar visible */
 }

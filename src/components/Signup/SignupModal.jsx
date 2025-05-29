@@ -3,14 +3,14 @@ import React, { useEffect } from 'react';
 const SignupModal = ({ isOpen, onClose, onLoginClick }) => {
     useEffect(() => {
         if (isOpen) {
-            document.body.classList.add('overflow-hidden');
+            document.body.classList.add('scroll-lock');
         } else {
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('scroll-lock');
         }
 
         // Cleanup when the component unmounts
         return () => {
-            document.body.classList.remove('overflow-hidden');
+            document.body.classList.remove('scroll-lock');
         };
     }, [isOpen]);
 
@@ -71,7 +71,7 @@ const SignupModal = ({ isOpen, onClose, onLoginClick }) => {
                 </p>
                 <button
                     onClick={onClose}
-                    className="absolute top-2 right-5 text-gray-500 hover:text-gray-700 text-2xl"
+                    className="absolute top-2 right-5 text-gray-500 hover:text-gray-700 text-2xl cursor-pointer"
                 >
                     &times;
                 </button>

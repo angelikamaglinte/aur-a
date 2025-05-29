@@ -14,13 +14,13 @@ const Collections = () => {
     useEffect(() => {
         const fetchProducts = async () => {
             const mockProducts = [
-                // Earrings
+                // earrings
                 { id: 1, name: 'Elegant Earrings', category: 'earrings', price: 120, image: assets.earrings1 },
                 { id: 2, name: 'Hoop Earrings', category: 'earrings', price: 80, image: assets.earrings2 },
                 { id: 3, name: 'Stud Earrings', category: 'earrings', price: 60, image: assets.earrings3 },
                 { id: 4, name: 'Drop Earrings', category: 'earrings', price: 100, image: assets.earrings4 },
 
-                // Rings
+                // rings
                 { id: 5, name: 'Stacked Rings', category: 'rings', price: 150, image: assets.ring1 },
                 { id: 6, name: 'Gold Band Ring', category: 'rings', price: 200, image: assets.ring2 },
                 { id: 7, name: 'Diamond Solitaire Ring', category: 'rings', price: 500, image: assets.ring3 },
@@ -40,7 +40,7 @@ const Collections = () => {
                 { id: 21, name: 'Geometric Ring', category: 'rings', price: 210, image: assets.ring17 },
                 { id: 22, name: 'Floral Ring', category: 'rings', price: 230, image: assets.ring18 },
 
-                // Necklaces
+                // necklaces
                 { id: 23, name: 'Gold Necklace', category: 'necklaces', price: 200, image: assets.necklace1 },
                 { id: 24, name: 'Silver Pendant Necklace', category: 'necklaces', price: 180, image: assets.necklace2 },
                 { id: 25, name: 'Pearl Necklace', category: 'necklaces', price: 300, image: assets.necklace3 },
@@ -49,7 +49,7 @@ const Collections = () => {
                 { id: 28, name: 'Statement Necklace', category: 'necklaces', price: 400, image: assets.necklace6 },
                 { id: 29, name: 'Minimalist Necklace', category: 'necklaces', price: 120, image: assets.necklace7 },
 
-                // Bracelets
+                // bracelets
                 { id: 30, name: 'Silver Bracelet', category: 'bracelets', price: 100, image: assets.bracelet1 },
                 { id: 31, name: 'Gold Cuff Bracelet', category: 'bracelets', price: 150, image: assets.bracelet2 },
                 { id: 32, name: 'Beaded Bracelet', category: 'bracelets', price: 80, image: assets.bracelet3 },
@@ -58,7 +58,26 @@ const Collections = () => {
                 { id: 35, name: 'Leather Bracelet', category: 'bracelets', price: 90, image: assets.bracelet6 },
                 { id: 36, name: 'Diamond Bracelet', category: 'bracelets', price: 500, image: assets.bracelet7 },
                 { id: 37, name: 'Rose Gold Bracelet', category: 'bracelets', price: 200, image: assets.bracelet8 },
-                { id: 38, name: 'Minimalist Bracelet', category: 'bracelets', price: 110, image: assets.bracelet9 },
+
+                // new
+                { id: 38, name: 'Stud Earrings', category: 'new', price: 60, image: assets.earrings3 },
+                { id: 39, name: 'Drop Earrings', category: 'new', price: 100, image: assets.earrings4 },
+                { id: 40, name: 'Geometric Ring', category: 'new', price: 210, image: assets.ring17 },
+                { id: 41, name: 'Floral Ring', category: 'new', price: 230, image: assets.ring18 },
+                { id: 42, name: 'Statement Necklace', category: 'new', price: 400, image: assets.necklace6 },
+                { id: 43, name: 'Minimalist Necklace', category: 'new', price: 120, image: assets.necklace7 },
+                { id: 44, name: 'Diamond Bracelet', category: 'new', price: 500, image: assets.bracelet7 },
+                { id: 45, name: 'Rose Gold Bracelet', category: 'new', price: 200, image: assets.bracelet8 },
+
+                // best sellers 
+                { id: 46, name: 'Stud Earrings', category: 'best-sellers', price: 60, image: assets.earrings3 },
+                { id: 47, name: 'Drop Earrings', category: 'best-sellers', price: 100, image: assets.earrings4 },
+                { id: 48, name: 'Geometric Ring', category: 'best-sellers', price: 210, image: assets.ring17 },
+                { id: 49, name: 'Floral Ring', category: 'best-sellers', price: 230, image: assets.ring18 },
+                { id: 50, name: 'Statement Necklace', category: 'best-sellers', price: 400, image: assets.necklace6 },
+                { id: 51, name: 'Minimalist Necklace', category: 'best-sellers', price: 120, image: assets.necklace7 },
+                { id: 52, name: 'Diamond Bracelet', category: 'best-sellers', price: 500, image: assets.bracelet7 },
+                { id: 53, name: 'Rose Gold Bracelet', category: 'best-sellers', price: 200, image: assets.bracelet8 },
             ];
 
             const filteredProducts =
@@ -70,6 +89,9 @@ const Collections = () => {
         };
 
         fetchProducts();
+
+        // scroll to top when category changes
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }, [category]);
 
     const handleCategoryClick = (newCategory) => {
@@ -90,7 +112,7 @@ const Collections = () => {
                 </p>
                 <div className="relative group">
                     {/* Left Arrow */}
-                    <button
+                    {/* <button
                         className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-10"
                         onClick={() => {
                             const container = document.getElementById('category-scroll');
@@ -113,7 +135,7 @@ const Collections = () => {
                         }}
                     >
                         <img src={assets.arrow_left} alt="Left Arrow" className="w-6 h-6" />
-                    </button>
+                    </button> */}
 
                     {/* Categories */}
                     <div
@@ -127,7 +149,7 @@ const Collections = () => {
                             <img
                                 src={assets.earrings1}
                                 alt="Earrings"
-                                className="w-80 h-70 object-cover rounded-2xl"
+                                className="w-65 h-40 object-cover rounded-2xl"
                             />
                             <p className="mt-2 text-sm font-medium">Earrings</p>
                         </button>
@@ -138,7 +160,7 @@ const Collections = () => {
                             <img
                                 src={assets.ring2}
                                 alt="Rings"
-                                className="w-80 h-70 object-cover rounded-2xl"
+                                className="w-65 h-40 object-cover rounded-2xl"
                             />
                             <p className="mt-2 text-sm font-medium">Rings</p>
                         </button>
@@ -149,7 +171,7 @@ const Collections = () => {
                             <img
                                 src={assets.necklace1}
                                 alt="Necklaces"
-                                className="w-80 h-70 object-cover rounded-2xl"
+                                className="w-65 h-40 object-cover rounded-2xl"
                             />
                             <p className="mt-2 text-sm font-medium">Necklaces</p>
                         </button>
@@ -160,7 +182,7 @@ const Collections = () => {
                             <img
                                 src={assets.bracelet2}
                                 alt="Bracelets"
-                                className="w-80 h-70 object-cover rounded-2xl"
+                                className="w-65 h-40 object-cover rounded-2xl"
                             />
                             <p className="mt-2 text-sm font-medium">Bracelets</p>
                         </button>
@@ -171,7 +193,7 @@ const Collections = () => {
                             <img
                                 src={assets.new_item_1}
                                 alt="New"
-                                className="w-80 h-70 object-cover rounded-2xl"
+                                className="w-65 h-40 object-cover rounded-2xl"
                             />
                             <p className="mt-2 text-sm font-medium">New</p>
                         </button>
@@ -182,14 +204,14 @@ const Collections = () => {
                             <img
                                 src={assets.new_item_2}
                                 alt="Best Sellers"
-                                className="w-80 h-70 object-cover rounded-2xl"
+                                className="w-65 h-40 object-cover rounded-2xl"
                             />
                             <p className="mt-2 text-sm font-medium">Best Sellers</p>
                         </button>
                     </div>
 
                     {/* Right Arrow */}
-                    <button
+                    {/* <button
                         className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-opacity z-10"
                         onClick={() => {
                             const container = document.getElementById('category-scroll');
@@ -197,7 +219,7 @@ const Collections = () => {
                         }}
                     >
                         <img src={assets.arrow_right} alt="Right Arrow" className="w-6 h-6" />
-                    </button>
+                    </button> */}
                 </div>
             </div>
 
